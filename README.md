@@ -1,6 +1,6 @@
 # Django-Text-Modifier
 
-A simple Text Modifier Application in Python-Django to perform various operations on the input string. It provides you following 10 features-
+**A simple Text Modifier Application in Python-Django to perform various operations on the input string. It provides you following 10 features-**
 
 1. Remove punctuations from string
 
