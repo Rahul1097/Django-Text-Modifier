@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block alert %}
+<strong>Success</strong> Your text has been analyzed
+{% endblock %}
+
+{% block body %}
+<form class="d-flex" action="/analyze" method="POST">
+    <div class="container">
+        <h1>Your Analyzed text - {{purpose}}</h1>
+        <p>
+        <pre>{{analyzed_text}}</pre>
+        </p>
+    </div>
+</form>
+{% endblock %}

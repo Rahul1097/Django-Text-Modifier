@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block alert %}
+<strong>Welcome to Text Utils</strong> You can do anything with text here
+{% endblock %}
+
+{% block body %}
+<form class="d-flex" action="/analyze" method="POST">{% csrf_token %}
+    <div class="container">
+        <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label"><b>Enter your text below:</b></label>
+            <textarea class="form-control" name='text' id="exampleFormControlTextarea1" rows="9"></textarea>
+        </div>
+        <div class="form-check form-switch">
+            <input class="form-check-input" name="removepunc" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+            <label class="form-check-label" for="flexSwitchCheckDefault">Remove Punctuation</label>
+        </div>
+        <div class="form-check form-switch">
+            <input class="form-check-input" name="fullcaps" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+            <label class="form-check-label" for="flexSwitchCheckDefault">UPPERCASE</label>
+        </div>
+        <div class="form-check form-switch">
+            <input class="form-check-input" name="lowercaps" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+            <label class="form-check-label" for="flexSwitchCheckDefault">LOWERCASE</label>
+        </div>
+        <div class="form-check form-switch">
+            <input class="form-check-input" name="capitalize" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+            <label class="form-check-label" for="flexSwitchCheckDefault">Capitalize</label>
+        </div>
+        <div class="form-check form-switch">
+            <input class="form-check-input" name="title" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+            <label class="form-check-label" for="flexSwitchCheckDefault">Convert to Title</label>
+        </div>
+        <div class="form-check form-switch">
+            <input class="form-check-input" name="trim" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+            <label class="form-check-label" for="flexSwitchCheckDefault">Trim spaces</label>
+        </div>
+        <div class="form-check form-switch">
+            <input class="form-check-input" name="newlineremover" type="checkbox" role="switch"
+                id="flexSwitchCheckDefault">
+            <label class="form-check-label" for="flexSwitchCheckDefault">New Line Remover</label>
+        </div>
+        <div class="form-check form-switch">
+            <input class="form-check-input" name="spaceremover" type="checkbox" role="switch"
+                id="flexSwitchCheckDefault">
+            <label class="form-check-label" for="flexSwitchCheckDefault">Extra Space Remover</label>
+        </div>
+        <div class="form-check form-switch">
+            <input class="form-check-input" name="charcount" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+            <label class="form-check-label" for="flexSwitchCheckDefault">Character Count</label>
+        </div>
+        <div class="form-check form-switch">
+            <input class="form-check-input" name="wordcount" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+            <label class="form-check-label" for="flexSwitchCheckDefault">Words Count</label>
+        </div>
+        <div>
+            <button type="submit" class="btn btn-success mt-2">Analyze text</button>
+        </div>
+</form>
+{% endblock %}
